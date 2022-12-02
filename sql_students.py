@@ -1,11 +1,11 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton, QInputDialog, QLineEdit
+from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton, QInputDialog, QLineEdit, QWidget
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
 from PyQt5.QtGui import QFont
 import sys
 
-# TODO изменить наследование окна с QMainWindow на QWidgets
-class Window(QMainWindow):
+
+class Window(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Оценочки")
@@ -13,7 +13,7 @@ class Window(QMainWindow):
         self.setFont(QFont("Comic Sans MS", 10, QFont.Bold))
         self.center_str = QLabel("#ШколаВнеПолитики")
         self.center_str.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-        self.setCentralWidget(self.center_str)
+        
         self.add_buttons()
         self.init_ui()
 
